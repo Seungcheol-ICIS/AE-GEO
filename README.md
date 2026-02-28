@@ -44,3 +44,9 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **b**: Scattering parameter
 - **m**: Shape parameter
 - **Ω**: Average power
+
+**Python Environment (3.13.7+)**
+- TensorFlow >= 2.20.0
+
+**MATLAB Environment (R2025b)**
+- Deep Learning Toolbox
