@@ -45,8 +45,25 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **m**: Shape parameter
 - **Ω**: Average power
 
+## Installation
+
+### Requirements
+
+```bash
+pip install -r requirements.txt
+```
 **Python Environment (3.13.7+)**
-- TensorFlow >= 2.20.0
+- TensorFlow >= 2.15.0 (Keras 3.0 compatible)
+- numpy, pandas, matplotlib (Data processing & Visualization)
 
 **MATLAB Environment (R2025b)**
 - Deep Learning Toolbox
+- Satellite Communications Toolbox
+
+**Hardware (Recommended)**
+- NVIDIA GPU with CUDA support for training the Autoencoder
+- Deployment: NVIDIA Jetson Orin Nano or equivalent edge AI hardware for real-time inference
+
+### 1. Train Autoencoder-based Constellation Design
+python src/train_ae.py --M1 16 --n 2 --epochs 10 --batch_size 32
+
