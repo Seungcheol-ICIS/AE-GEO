@@ -34,8 +34,13 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **Joint Signal Reception & Estimation**
 - **Comparables**: SIC, JML and proposed AE end-to-end framework
 - **Channel Model**: Shadowed-Rician fading channel with LMS parameters AS environment
-| Shadowing Type | b | m | \Omega |
+
+| Shadowing Type | b | m | Ω |
 |----------------|---|---|--------|
-| Frequent Heavy Shadowing (FHS) | 0.063 | 0.739 | 8.97 \times 10^-4|
-**| Average Shadowing (AS)  | 0.126 | 10.1 | 0.835|**
+| Frequent Heavy Shadowing (FHS) | 0.063 | 0.739 | 8.97 × 10^-4|
+| Average Shadowing (AS)  | 0.126 | 10.1 | 0.835
 | Infrequent Light Shadowing (ILS) | 0.158 | 19.4 | 1.29|
+
+- **b**: Scattering parameter
+- **m**: Shape parameter
+- **Ω**: Average power
