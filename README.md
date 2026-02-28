@@ -27,9 +27,15 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **SER Performance**: Demonstrates significantly lower Symbol Error Rate (SER) compared to conventional SIC (Successive Interference Cancellation) and JML (Joint Maximum Likelihood) receivers.
 
 
-### Systemo model architecture
+### Systemo Model architecture
 ![System Model](figure/fig1_system_model.png)
 - **Two GEO satellites**: GEO1 and GEO2
 - **Single GBS**
 - **Joint Signal Reception & Estimation**
 - **Comparables**: SIC, JML and proposed AE end-to-end framework
+- **Channel Model**: Shadowed-Rician fading channel with LMS parameters AS environment
+| Shadowing Type | b | m | \Omega |
+|----------------|---|---|--------|
+| Frequent Heavy Shadowing (FHS) | 0.063 | 0.739 | 8.97 \times 10^-4|
+**| Average Shadowing (AS)  | 0.126 | 10.1 | 0.835|**
+| Infrequent Light Shadowing (ILS) | 0.158 | 19.4 | 1.29|
