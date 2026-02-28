@@ -46,23 +46,23 @@ pip install -r requirements.txt
 - Deployment: NVIDIA Jetson Orin Nano or equivalent edge AI hardware for real-time inference
 
 ### System architecture
-## 1.System model
+#### 1.System model
 ![System Model](figure/fig1_system_model.png)
 - **Two GEO satellites**: GEO1 and GEO2
 - **Single GBS**
 - **Joint Signal Reception & Estimation**
 - **Comparables**: SIC, JML and proposed AE end-to-end framework
 
-## 2.Autoencoder architecture
+#### 2.Autoencoder architecture
 ![Autoencoder architecture](figure/fig2_Autoencoder_architecture.png)
 
-# Encoder(GEO satellite)
+##### Encoder(GEO satellite)
 The encoder maps input messages into a complex-valued constellation space with power normalization.
 - Input: One-hot encoded messages ($M_1=8, M_2=4$).
 - Architecture: Dense layers with ReLU activation followed by $L_2$ normalization to satisfy power constraints.
 - Output: $n$ dimensional complex symbols.
 
-# Channel 
+##### Channel 
 The channel simulates real-world satellite impairments:
 - Fading: Shadowed Rician Fading using parameters for Average Shadowing (AS).
 
