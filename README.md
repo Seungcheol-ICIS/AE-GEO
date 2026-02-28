@@ -25,26 +25,7 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **Dual-Satellite Joint Operation with Single GBS**: Supports a backward-compatible strategy allowing two GEO satellites to transmit simultaneously on the same frequency.
 - **Shadowed-Rician Fading**: Incorporates customized neural network layers and activation functions optimized directly for Shadowed-Rician fading channels.
 - **SER Performance**: Demonstrates significantly lower Symbol Error Rate (SER) compared to conventional SIC (Successive Interference Cancellation) and JML (Joint Maximum Likelihood) receivers.
-
-
-### Systemo Model architecture
-![System Model](figure/fig1_system_model.png)
-- **Two GEO satellites**: GEO1 and GEO2
-- **Single GBS**
-- **Joint Signal Reception & Estimation**
-- **Comparables**: SIC, JML and proposed AE end-to-end framework
-- **Channel Model**: Shadowed-Rician fading channel with LMS parameters AS environment
-
-| Shadowing Type | b | m | Ω |
-|----------------|---|---|--------|
-| Frequent Heavy Shadowing (FHS) | 0.063 | 0.739 | 8.97 × 10^-4|
-| Average Shadowing (AS)  | 0.126 | 10.1 | 0.835
-| Infrequent Light Shadowing (ILS) | 0.158 | 19.4 | 1.29|
-
-- **b**: Scattering parameter
-- **m**: Shape parameter
-- **Ω**: Average power
-
+- 
 ## Installation
 
 ### Requirements
@@ -64,6 +45,32 @@ pip install -r requirements.txt
 - NVIDIA GPU with CUDA support for training the Autoencoder
 - Deployment: NVIDIA Jetson Orin Nano or equivalent edge AI hardware for real-time inference
 
-### 1. Train Autoencoder-based Constellation Design
-python src/train_ae.py --M1 16 --n 2 --epochs 10 --batch_size 32
+### System architecture
+## 1.System model
+![System Model](figure/fig1_system_model.png)
+- **Two GEO satellites**: GEO1 and GEO2
+- **Single GBS**
+- **Joint Signal Reception & Estimation**
+- **Comparables**: SIC, JML and proposed AE end-to-end framework
 
+## 2.Encoder(GEO satellite)
+The encoder maps input messages into a complex-valued constellation space with power normalization.
+- Input: One-hot encoded messages ($M_1=8, M_2=4$).
+- Architecture: Dense layers with ReLU activation followed by $L_2$ normalization to satisfy power constraints.
+- Output: $n$ dimensional complex symbols.
+
+## 3. Channel 
+The channel simulates real-world satellite impairments:
+- Fading: Shadowed Rician Fading using parameters for Average Shadowing (AS).
+
+| Shadowing Type | $b$ | $m$ | $\Omega$ |
+|----------------|---|---|--------|
+| Frequent Heavy Shadowing (FHS) | 0.063 | 0.739 | 8.97 × 10^-4|
+| Average Shadowing (AS)  | 0.126 | 10.1 | 0.835
+| Infrequent Light Shadowing (ILS) | 0.158 | 19.4 | 1.29|
+
+- **$b$**: Scattering parameter
+- **$m$**: Shape parameter
+- **$\Omega$**: Average power
+- Interference: Signals from both transmitters are summed to simulate NOMA.
+- Noise: Additive White Gaussian Noise (AWGN) based on target SNR.
