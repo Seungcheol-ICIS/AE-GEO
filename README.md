@@ -53,13 +53,16 @@ pip install -r requirements.txt
 - **Joint Signal Reception & Estimation**
 - **Comparables**: SIC, JML and proposed AE end-to-end framework
 
-## 2.Encoder(GEO satellite)
+## 2.Autoencoder architecture
+![Autoencoder architecture](figure/fig2_Autoencoder_architecture.png)
+
+# Encoder(GEO satellite)
 The encoder maps input messages into a complex-valued constellation space with power normalization.
 - Input: One-hot encoded messages ($M_1=8, M_2=4$).
 - Architecture: Dense layers with ReLU activation followed by $L_2$ normalization to satisfy power constraints.
 - Output: $n$ dimensional complex symbols.
 
-## 3. Channel 
+# Channel 
 The channel simulates real-world satellite impairments:
 - Fading: Shadowed Rician Fading using parameters for Average Shadowing (AS).
 
