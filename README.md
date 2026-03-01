@@ -53,6 +53,38 @@ pip install -r requirements.txt
 - NVIDIA GPU with CUDA support for training the Autoencoder
 - Deployment: NVIDIA Jetson Orin Nano or equivalent edge AI hardware for real-time inference
 
+---
+
+## Project Structure
+
+```
+ePASS/
+├── src/
+│   ├── gen_img_raw.py         # Generate Cartesian IQ images (224x224)
+│   ├── gen_img_amc.py         # Generate Polar (AMC-style) images (256x256)
+│   ├── train_cnn.py           # CNN training (ResNet-18) with PyTorch
+│   ├── train_rnn.py           # RNN training (LSTM/GRU)
+│   └── upscale_images.py      # EDSR/Bicubic x4 upscaling (CUDA accelerated)
+├── figures/                   # Paper figures
+└── results/                   # Experiment results
+
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 2.Autoencoder architecture
 ![Autoencoder architecture](figure/fig2_Autoencoder_architecture.png)
