@@ -26,11 +26,13 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **Shadowed-Rician Fading**: Incorporates customized neural network layers and activation functions optimized directly for Shadowed-Rician fading channels.
 - **SER Performance**: Demonstrates significantly lower Symbol Error Rate (SER) compared to conventional SIC (Successive Interference Cancellation) and JML (Joint Maximum Likelihood) receivers.
 
+### Performance Highlights
+
+- High reconstruction precision **98% or more at 20dB SNR** in shadowed-rician fading environments
+- **Rapid training convergence** with exceptional data efficiency
+- Advanced **multi-user(Satellite) interference (MUI)** suppression via geometric shaping
+- Edge AI Optimized Architecture for **Real-Time Satellite Communications**
 ![System Model](figure/fig1_system_model.png)
-- **Two GEO satellites**: GEO1 and GEO2
-- **Single GBS**
-- **Joint Signal Reception & Estimation**
-- **Comparables**: SIC, JML and proposed AE end-to-end framework
 
 ## Installation
 
