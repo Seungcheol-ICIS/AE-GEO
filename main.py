@@ -9,10 +9,9 @@ from sklearn.preprocessing import OneHotEncoder
 from tensorflow.keras.layers import Input, Add
 from tensorflow.keras.models import Model
 
-# 사용자 정의 모듈 임포트
-from utils import *
-from shadowed_rician_channel import *
-from models import *
+from src.utils import *
+from src.shadowed_rician_channel import *
+from src.models import *
 
 def get_args():
     parser = argparse.ArgumentParser(description="AE-NOMA Training and Simulation")
@@ -34,7 +33,6 @@ def get_args():
     
     return parser.parse_args()
 
-@tf.function
 def train_step(b1, b2, hr1, hi1, hr2, hi2, var_list, ae1, ae2, loss_fn, optimizer):
     with tf.GradientTape() as tape:
         p1 = ae1([b1, b2, hr1, hi1, hr2, hi2], training=True)
@@ -47,7 +45,6 @@ def train_step(b1, b2, hr1, hi1, hr2, hi2, var_list, ae1, ae2, loss_fn, optimize
 def main():
     args = get_args()
     
-    # 고정 파라미터 및 SEED 설정
     SEED = 42
     tf.keras.utils.set_random_seed(SEED)
     os.environ['PYTHONHASHSEED'] = str(SEED)
@@ -56,7 +53,6 @@ def main():
     M2, n2 = 4, 2
     training_SNR2 = args.training_snr - args.noma_snr
 
-    # 1. 데이터 준비
     oh1 = OneHotEncoder(sparse_output=False, categories=[range(M1)])
     oh2 = OneHotEncoder(sparse_output=False, categories=[range(M2)])
     
@@ -65,7 +61,6 @@ def main():
     h_r1, h_i1 = generate_shadowed_rician_H(args.num_samples)
     h_r2, h_i2 = generate_shadowed_rician_H(args.num_samples)
 
-    # 2. 모델 구축
     input1, input2 = Input(shape=(M1,)), Input(shape=(M2,))
     h_r1_in, h_i1_in = Input(shape=(1,)), Input(shape=(1,))
     h_r2_in, h_i2_in = Input(shape=(1,)), Input(shape=(1,))
@@ -84,7 +79,6 @@ def main():
     ae1 = Model(inputs=[input1, input2, h_r1_in, h_i1_in, h_r2_in, h_i2_in], outputs=dec1([ch1, h_r1_in, h_i1_in, h_r2_in, h_i2_in]))
     ae2 = Model(inputs=[input2, input1, h_r2_in, h_i2_in, h_r1_in, h_i1_in], outputs=dec2([ch2, h_r2_in, h_i2_in, h_r1_in, h_i1_in]))
 
-    # 3. 학습 루프
     optimizer = keras.optimizers.Nadam(learning_rate=args.lr, clipnorm=1.0)
     loss_fn = keras.losses.CategoricalCrossentropy()
     vars_to_train = unique_trainable_vars(enc1, enc2, dec1, dec2)
@@ -101,7 +95,6 @@ def main():
                 vars_to_train, ae1, ae2, loss_fn, optimizer)
         print(f"Epoch {epoch}/{args.num_epochs}, Loss: {total_loss/steps:.5f}")
 
-    # 4. 테스트 (SER 평가)
     print("\n--- Testing Start ---")
     test_msg1 = np.random.randint(M1, size=args.n_test)
     test_msg2 = np.random.randint(M2, size=args.n_test)
@@ -110,8 +103,12 @@ def main():
 
     H_t1r, H_t1i = generate_shadowed_rician_H(args.n_test)
     H_t2r, H_t2i = generate_shadowed_rician_H(args.n_test)
-    t_hr1, t_hi1 = H_t1r.reshape(-1, 1), H_t1i.reshape(-1, 1)
-    t_hr2, t_hi2 = H_t2r.reshape(-1, 1), H_t2i.reshape(-1, 1)
+    t_hr1 = tf.convert_to_tensor(H_t1r.reshape(-1, 1), dtype=tf.float32)
+    t_hi1 = tf.convert_to_tensor(H_t1i.reshape(-1, 1), dtype=tf.float32)
+    t_hr2 = tf.convert_to_tensor(H_t2r.reshape(-1, 1), dtype=tf.float32)
+    t_hi2 = tf.convert_to_tensor(H_t2i.reshape(-1, 1), dtype=tf.float32)
+    data_test1 = tf.cast(data_test1, tf.float32)
+    data_test2 = tf.cast(data_test2, tf.float32)
 
     faded1 = Shadowed_rician_fading_layer()([enc1(data_test1), t_hr1, t_hi1])
     faded2 = Shadowed_rician_fading_layer()([enc2(data_test2), t_hr2, t_hi2])
@@ -131,21 +128,20 @@ def main():
         ser2_list.append(SER_calculator(data_test2, pred2).numpy())
         print(f"SNR: {snr}dB | GEO1 SER: {ser1_list[-1]:.5f} | GEO2 SER: {ser2_list[-1]:.5f}")
 
-    # 5. 결과 저장 및 시각화
     if not os.path.exists(args.save_path): os.makedirs(args.save_path)
     
-    # 그래프 출력
     plt.figure(figsize=(8, 6))
     plt.semilogy(snr_range, ser1_list, 'b-o', label=f'GEO1 (M={M1})')
     plt.semilogy(snr_range, ser2_list, 'r-s', label=f'GEO2 (M={M2}, Offset={args.noma_snr}dB)')
     plt.grid(True, which='both')
+    plt.xlim(0, 20)
+    plt.ylim(1e-3, 1)
     plt.xlabel('SNR [dB]')
     plt.ylabel('SER')
     plt.title(f'AE-NOMA (Tag: {args.tag})')
     plt.legend()
     plt.savefig(os.path.join(args.save_path, f"{args.tag}_SER.png"))
     
-    # 데이터 저장
     save_constellation_to_csv(enc1, enc2, M1, M2, n1, n2, args.save_path, args.tag, "Final")
     pd.DataFrame({'SNR': snr_range, 'SER1': ser1_list, 'SER2': ser2_list}).to_csv(
         os.path.join(args.save_path, f"{args.tag}_Results.csv"), index=False)
