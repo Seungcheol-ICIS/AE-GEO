@@ -13,8 +13,6 @@ env/
 .idea/
 
 # --- Data & Large Files ---
-data/
-dataset/
 *.zip
 *.tar.gz
 
