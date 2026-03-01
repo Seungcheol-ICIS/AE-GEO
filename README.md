@@ -124,7 +124,10 @@ python main.py --config config.yaml
 | Loss Function | Categorical Cross-Entropy |
 | Mini-batch Size | 512 |
 | Max Epochs | 25 |
-| Normalization | Average Power Constraint |
+| Training SNR | 20 dB |
+| Normalization | Average Power Constraint ($P \le 1$)|
+| Activation (Hidden) | ReLU |
+| Activation (Output)	| Softmax |
 
 ### System parameters
 ![SER performance_comparison](figure/SER_performance_comparison.png)
