@@ -17,7 +17,7 @@ Implementation code for **"Autoencoder-Based Constellation Redesign for Joint Op
 ---
 
 ## Overview
-ePASS is a practical and lightweight **autoencoder-based constellation redesign framework** for spectrum-sharing dual GEO satellite downlink systems. It leverages an end-to-end autoencoder to jointly learn signal encoding/decoding and channel-adaptive constellation reconfiguration, enabling a single ground base station (GBS) to reliably separate and reconstruct superimposed signals under satellite fading conditions, while achieving improved symbol error rate (SER) performance compared to conventional SIC and joint maximum-likelihood (JML) receivers. 
+AE-GEO is a practical and lightweight **autoencoder-based constellation redesign framework** for spectrum-sharing dual GEO satellite downlink systems. It leverages an end-to-end autoencoder to jointly learn signal encoding/decoding and channel-adaptive constellation reconfiguration, enabling a single ground base station (GBS) to reliably separate and reconstruct superimposed signals under satellite fading conditions, while achieving improved symbol error rate (SER) performance compared to conventional SIC and joint maximum-likelihood (JML) receivers. 
 
 ### Key Features
 - **AE-based End-to-End Learning Framework**: Leverages a deep learning-based autoencoder (AE) to jointly optimize the signal encoding (GEO satellite) and decoding (GBS) processes.
@@ -129,7 +129,9 @@ python main.py --config config.yaml
 | Activation (Hidden) | ReLU |
 | Activation (Output)	| Softmax |
 
-### System parameters
+---
+
+## Results
 ![SER performance_comparison](figure/SER_performance_comparison.png)
 
 | SNR | GEO1 SER (Sat-AE) | GEO1 SER (SIC) | GEO1 SER (JML) | GEO1 SER (MU-AE) |
