@@ -25,7 +25,13 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - **Dual-Satellite Joint Operation with Single GBS**: Supports a backward-compatible strategy allowing two GEO satellites to transmit simultaneously on the same frequency.
 - **Shadowed-Rician Fading**: Incorporates customized neural network layers and activation functions optimized directly for Shadowed-Rician fading channels.
 - **SER Performance**: Demonstrates significantly lower Symbol Error Rate (SER) compared to conventional SIC (Successive Interference Cancellation) and JML (Joint Maximum Likelihood) receivers.
-- 
+
+![System Model](figure/fig1_system_model.png)
+- **Two GEO satellites**: GEO1 and GEO2
+- **Single GBS**
+- **Joint Signal Reception & Estimation**
+- **Comparables**: SIC, JML and proposed AE end-to-end framework
+
 ## Installation
 
 ### Requirements
@@ -45,18 +51,11 @@ pip install -r requirements.txt
 - NVIDIA GPU with CUDA support for training the Autoencoder
 - Deployment: NVIDIA Jetson Orin Nano or equivalent edge AI hardware for real-time inference
 
-### System architecture
-#### 1.System model
-![System Model](figure/fig1_system_model.png)
-- **Two GEO satellites**: GEO1 and GEO2
-- **Single GBS**
-- **Joint Signal Reception & Estimation**
-- **Comparables**: SIC, JML and proposed AE end-to-end framework
 
-#### 2.Autoencoder architecture
+### 2.Autoencoder architecture
 ![Autoencoder architecture](figure/fig2_Autoencoder_architecture.png)
 
-##### Encoder(GEO satellite)
+### Encoder(GEO satellite)
 The encoder maps input messages into a complex-valued constellation space with power normalization.
 - Input: One-hot encoded messages ($M_1=8, M_2=4$).
 - Architecture: Dense layers with ReLU activation followed by $L_2$ normalization to satisfy power constraints.
