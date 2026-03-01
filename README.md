@@ -34,39 +34,9 @@ ePASS is a practical and lightweight **autoencoder-based constellation redesign 
 - Edge AI Optimized Architecture for **Real-Time Satellite Communications**
 ![System Model](figure/fig1_system_model.png)
 
-## Installation
-
-### Requirements
-
-```bash
-pip install -r requirements.txt
-```
-**Python Environment (3.13.7+)**
-- TensorFlow >= 2.15.0 (Keras 3.0 compatible)
-- numpy, pandas, matplotlib (Data processing & Visualization)
-
-**MATLAB Environment (R2025b)**
-- Deep Learning Toolbox
-- Satellite Communications Toolbox
-
-**Hardware (Recommended)**
-- NVIDIA GPU with CUDA support for training the Autoencoder
-- Deployment: NVIDIA Jetson Orin Nano or equivalent edge AI hardware for real-time inference
-
----
-
 ## Project Structure
 
 ```
-ePASS/
-├── src/
-│   ├── gen_img_raw.py         # Generate Cartesian IQ images (224x224)
-│   ├── gen_img_amc.py         # Generate Polar (AMC-style) images (256x256)
-│   ├── train_cnn.py           # CNN training (ResNet-18) with PyTorch
-│   ├── train_rnn.py           # RNN training (LSTM/GRU)
-│   └── upscale_images.py      # EDSR/Bicubic x4 upscaling (CUDA accelerated)
-├── figures/                   # Paper figures
-└── results/                   # Experiment results
 
 AE-GEO/
 ├── src/
@@ -83,41 +53,17 @@ AE-GEO/
 
 ---
 
+## Installation
+
+### Requirements
+
+```bash
+pip install -r requirements.txt
+```
+### Dependencies
+- TensorFlow >= 2.15.0 (Keras 3.0 compatible)
+- numpy, pandas, matplotlib (Data processing & Visualization)
+
+---
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-### 2.Autoencoder architecture
-![Autoencoder architecture](figure/fig2_Autoencoder_architecture.png)
-
-### Encoder(GEO satellite)
-The encoder maps input messages into a complex-valued constellation space with power normalization.
-- Input: One-hot encoded messages ($M_1=8, M_2=4$).
-- Architecture: Dense layers with ReLU activation followed by $L_2$ normalization to satisfy power constraints.
-- Output: $n$ dimensional complex symbols.
-
-##### Channel 
-The channel simulates real-world satellite impairments:
-- Fading: Shadowed Rician Fading using parameters for Average Shadowing (AS).
-
-| Shadowing Type | $b$ | $m$ | $\Omega$ |
-|----------------|---|---|--------|
-| Frequent Heavy Shadowing (FHS) | 0.063 | 0.739 | 8.97 × 10^-4|
-| Average Shadowing (AS)  | 0.126 | 10.1 | 0.835
-| Infrequent Light Shadowing (ILS) | 0.158 | 19.4 | 1.29|
-
-- **$b$**: Scattering parameter
-- **$m$**: Shape parameter
-- **$\Omega$**: Average power
-- Interference: Signals from both transmitters are summed to simulate NOMA.
-- Noise: Additive White Gaussian Noise (AWGN) based on target SNR.
