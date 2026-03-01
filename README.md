@@ -68,6 +68,17 @@ ePASS/
 ├── figures/                   # Paper figures
 └── results/                   # Experiment results
 
+AE-GEO/
+├── src/
+│   ├── main.py              # Execution Control (Training Loops, Gradient Steps, Test Scenarios)
+│   ├── models.py            # Neural Network Architectures (Encoder, Decoder, Normalization Layers)
+│   ├── channel.py           # Physical Layer Simulation (Shadowed Rician H Gen, Fading/AWGN Layers)
+│   ├── utils.py             # Numerical Ops & Data Handling (SNR-to-Noise, SER Calculation, Batch Gen)
+├── data/
+│   └── constellations/      # Storage for Trained Symbol Coordinates (CSV format)
+├── figures/                 # Publication-ready Figures (SER Curves, Constellation PNGs)
+└── results/                 # Numerical Simulation Data (SER results, Training Logs)
+
 ```
 
 ---
