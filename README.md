@@ -61,56 +61,87 @@ AE-GEO/
 pip install -r requirements.txt
 ```
 ### Dependencies
-- TensorFlow >= 2.15.0 (Keras 3.0 compatible)
+- TensorFlow >= 2.20.0 (Keras 3.0 compatible)
 - numpy, pandas, matplotlib (Data processing & Visualization)
+- scikit-learn > = 1.7.2
+
+### Hardware & Environment
+**macOS (Apple Silicon)**
+
+- **Main Processor:** Apple M4 Chip (Recommended)
+- **GPU:** Integrated Apple GPU
+- **Memory:** 8GB RAM (Minimum), 16GB RAM (Recommended for large-scale simulations)
+- **Architecture:** ARM64
 
 ---
 
 ## Usage
 
-### Training
+### 1. Training the Model
 ```bash
-python main.py \
-    --num-samples 100000 \
-    --num-epochs 25 \
-    --batch-size 256 \
-    --lr 0.001 \
-    --noma-snr 3 \
-    --training-snr 20 \
-    --device auto
+# Run with default configuration
+python main.py
+# Run with custom hyperparameters
+python main.py --num-epochs 50 --batch-size 1024 --lr 0.006
+```
+**Configuration:**
+- Modulation Order: $M_1=8$ (User 1), $M_2=4$ (User 2)
+- Channel Model: Shadowed-Rician
+- Normalization: Average power constraint $P \leq 1$
+
+**Key Arguments:**
+- --num-samples: Number of training samples (Default: 500,000)
+- --training-snr: SNR level used during the training phase (Default: 20dB)
+- --n-test: Number of samples for the testing/evaluation phase (Default: 1,000,000)
+
+### 2. Evaluation & Output
+**Outputs:**
+- results/[TAG]_SER.png: Plot comparing SER performance across SNR levels.
+- results/[TAG]_Results.csv: Numerical data for the SER curves.
+- results/[TAG]_Constellation.csv: Learned constellation coordinates of the Autoencoder.
+**Note:** After training, the script automatically evaluates the Symbol Error Rate (SER) across various SNR levels.
+
+### 3. Configuration (YAML)
+```bash
+# Run using a specific configuration file
+python main.py --config config.yaml
 ```
 
 ### Command Line Arguments
-```bash
 | Argument | Description | Default |
-|----------|-------------|---------|
-| `--save-path` | Directory path where result files (CSV, PNG) will be stored | ./results |
-| `--tag` | Prefix tag for identifying specific experiment runs | AE_NOMA_GEO |
-| `--num-samples` | Training dataset size | 500000 |
-| `--num-epochs` | Number of training epochs | 25 |
-| `--batch-size` | Mini-batch size | 512 |
-| `--lr` | Learning rate | 0.006 |
-| `--noma-snr` | Power/SNR offset between the two GEO users (dB) | 3 |
-| `--training-snr` | Baseline SNR used during the training phase (dB) | 20 |
-| '--n-test' | Test dataset size | 1000000 |
-| '--device' | Device: auto, cpu, cuda | auto |
-```
+| :--- | :--- | :--- |
+| --num-samples | Number of training message samples| 500,000 |
+| --num-epochs | Number of training iterations | 25 |
+| --batch-size | Number of samples per gradient update | 512 |
+| --lr | Learning rate for Adam optimizer | 0.006 |
+| --training-snr | SNR (dB) used during training | 20 |
+| --n-test | Total samples for validation | 1,000,000 |
+
+### Training Parameters (Autoencoder)
+| Parameter | Value |
+| :--- | :--- |
+| Optimizer | Adam |
+| Loss Function | Categorical Cross-Entropy |
+| Mini-batch Size | 512 |
+| Max Epochs | 25 |
+| Normalization | Average Power Constraint |
 
 ### System parameters
-```bash
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `--save-path` | Directory path where result files (CSV, PNG) will be stored | ./results |
-| `--tag` | Prefix tag for identifying specific experiment runs | AE_NOMA_GEO |
-| `--num-samples` | Training dataset size | 500000 |
-| `--num-epochs` | Number of training epochs | 25 |
-| `--batch-size` | Mini-batch size | 512 |
-| `--lr` | Learning rate | 0.006 |
-| `--noma-snr` | Power/SNR offset between the two GEO users (dB) | 3 |
-| `--training-snr` | Baseline SNR used during the training phase (dB) | 20 |
-| '--n-test' | Test dataset size | 1000000 |
-| '--device' | Device: auto, cpu, cuda | auto |
-```
+![SER performance_comparison](figure/SER_performance_comparison.png)
+
+| SNR | GEO1 SER (Sat-AE) | GEO1 SER (SIC) | GEO1 SER (JML) | GEO1 SER (MU-AE) |
+| :---: | :---: | :---: | :---: | :---: |
+| 0 | 0.352 | 0.603 | 0.603 | 0.371 |
+| 2 | 0.256 | 0.530 | 0.530 | 0.277 |
+| 4 | 0.175 | 0.448 | 0.448 | 0.194 |
+| 6 | 0.110 | 0.363 | 0.363 | 0.126 |
+| 8 | 0.066 | 0.279 | 0.279 | 0.078 |
+| 10 | 0.038 | 0.209 | 0.209 | 0.046 |
+| 12 | 0.022 | 0.153 | 0.153 | 0.027 |
+| 14 | 0.013 | 0.112 | 0.112 | 0.017 |
+| 16 | 0.008 | 0.085 | 0.085 | 0.011 |
+| 18 | 0.005 | 0.067 | 0.067 | 0.008 |
+| 20 | 0.003 | 0.056 | 0.056 | 0.006 |
 
 ## Citation
 
