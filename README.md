@@ -1,4 +1,4 @@
-# ePASS: Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites
+# Sat-AE: Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites
 
 [![Paper](https://img.shields.io/badge/Paper-IEEE%20Communications%20Letters-blue)](https://ieeexplore.ieee.org/)
 [![Python](https://img.shields.io/badge/Python-3.17-green.svg)](https://www.python.org/)
@@ -9,8 +9,6 @@
 Implementation code for **"Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites"**
 
 > **Authors:** Seungcheol Ha†, Seongmin Pyo, Dong-Hyo Lee, Taehoon Kim, and Inkyu Bang
->
-> † These authors contributed equally to this work.
 >
 > **Submitted in:** IEEE Communications Letters
 
