@@ -1,7 +1,7 @@
 # Sat-AE: Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites
 
 [![Paper](https://img.shields.io/badge/Paper-IEEE%20Communications%20Letters-blue)](https://ieeexplore.ieee.org/)
-[![Python](https://img.shields.io/badge/Python-3.17-green.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.11-green.svg)](https://www.python.org/)
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2025a-orange.svg)](https://www.mathworks.com/)
 
 Implementation code for **"Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites"**
@@ -73,12 +73,12 @@ pip install -r requirements.txt
 
 ## Usage
 
-### 1. Training the Model
+### Training the Model
 ```bash
-# Run with default configuration
-python main.py
-# Run with custom hyperparameters
-python main.py --num-epochs 50 --batch-size 1024 --lr 0.006
+# Run with default parameters
+python main.py --num-samples 500000 --num-epochs 50 --batch-size 512 --lr 0.006
+# Check version & device
+python main.py version
 ```
 **Configuration:**
 - Modulation Order: $M_1=8$ (User 1), $M_2=4$ (User 2)
@@ -90,14 +90,14 @@ python main.py --num-epochs 50 --batch-size 1024 --lr 0.006
 - --training-snr: SNR level used during the training phase (Default: 20dB)
 - --n-test: Number of samples for the testing/evaluation phase (Default: 1,000,000)
 
-### 2. Evaluation & Output
+### Evaluation & Output
 **Outputs:**
 - results/[TAG]_SER.png: Plot comparing SER performance across SNR levels.
 - results/[TAG]_Results.csv: Numerical data for the SER curves.
 - results/[TAG]_Constellation.csv: Learned constellation coordinates of the Autoencoder.
 **Note:** After training, the script automatically evaluates the Symbol Error Rate (SER) across various SNR levels.
 
-### 3. Configuration (YAML)
+### Configuration (YAML)
 ```bash
 # Run using a specific configuration file
 python main.py --config config.yaml
@@ -113,18 +113,6 @@ python main.py --config config.yaml
 | --training-snr | SNR (dB) used during training | 20 |
 | --n-test | Total samples for validation | 1,000,000 |
 
-### Training Parameters (Autoencoder)
-| Parameter | Value |
-| :--- | :--- |
-| Optimizer | Adam |
-| Loss Function | Categorical Cross-Entropy |
-| Mini-batch Size | 512 |
-| Max Epochs | 25 |
-| Training SNR | 20 dB |
-| Normalization | Average Power Constraint ($P \le 1$)|
-| Activation (Hidden) | ReLU |
-| Activation (Output)	| Softmax |
-
 ### System Parameters 
 | Parameter | Symbol | Value | Description |
 |-----------|--------|-------|-------------|
@@ -134,7 +122,25 @@ python main.py --config config.yaml
 | GEO2 satellite dimensions | $n_2$ | $2$ | Number of dimensions GEO2 satellite|
 | Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
 | Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
-| Shadowed-Rician $\Omega$ | $\Omega$ | $8.97 \times 10^-4$ | Average power |
+| Shadowed-Rician $\Omega$ | $\Omega$ | $8.97 \times 10^{-4}$ | Average power |
+
+### Training Parameters (Proposed Sat-AE)
+| Parameter | Value |
+| :--- | :--- |
+| Optimizer | Adam |
+| Loss Function | Categorical Cross-Entropy |
+| Mini-batch Size | 512 |
+| Max Epochs | 25 |
+| Training SNR | 20 dB |
+| Normalization | Average Power Constraint ($P \le 1$)|
+| Activation (Hidden) | ReLU (512 → 256) |
+| Activation (Output) | Softmax |
+
+### Training Parameters (Comparative technique MU-AE)
+| Parameter | Value |
+| :--- | :--- |
+| Activation (Hidden) | ReLU (M) |
+| Activation (Output) | Softmax |
 
 ---
 
@@ -160,10 +166,10 @@ Due to the page limitations of IEEE Communications Letters additional experiment
 
 | Document | Description |
 | :---: | :---: |
-| [Channel Specificity Analysis](Channel_Specificity_Analysis.md) | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
-| [Architecture Optimization Analysis](Architecture_Optimization_Analysis.md) |  Ablation studies on layer depth and activation functions to justify AE design. |
-| [Power_Difference Robustness Analysis](Power_Difference_Robustness_Analysis.md) |  Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
-| [Geometric Structure and Dimensional Separation](Geometric_Structure_and_Dimensional_Separation.md) | Geometric interpretation of dimensional separation and constellation shaping for $n=4$. |
+| [Channel Specificity Analysis](supplementary/Channel_Specificity_Analysis.md) | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
+| [Architecture Optimization Analysis](supplementary/Architecture_Optimization_Analysis.md) |  Ablation studies on layer depth and activation functions to justify AE design. |
+| [Power Difference Robustness Analysis](supplementary/Power_Difference_Robustness_Analysis.md) |  Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
+| [Geometric Structure and Dimensional Separation](supplementary/Geometric_Structure_and_Dimensional_Separation.md) | Geometric interpretation of dimensional separation and constellation shaping for $n=4$. |
 
 
 
