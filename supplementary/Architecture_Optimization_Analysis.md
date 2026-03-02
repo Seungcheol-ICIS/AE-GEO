@@ -1,11 +1,9 @@
-# Comparative Analysis of Channel Specificity and Model Robustness (R2.2)
+# Architecture Optimization and Design Rationale of the Autoencoder (R2.3)
 
-**Reviewer Comment (R2.2):** "The innovation claim of using autoencoders for constellation redesign is not sufficiently novel, as similar approaches exist in NOMA contexts; the article does not clearly articulate how the satellite-specific adaptations."
+**Reviewer Comment (R2.3):** "The description of the autoencoder architecture is too brief, lacking justification for the choice of network layers or computational complexity, which could hinder practical implementation; the authors should elaborate on design decisions, such as the rationale behind activation functions."
 
 ## Overview
-
-To validate the satellite-specific optimization of the proposed Autoencoder (AE) framework, we conduct a comparative analysis between a generic Rayleigh fading channel (typical for terrestrial NOMA) and the Shadowed-Rician (SR) fading channel (specific to satellite-to-ground links).
-
+This document provides a detailed justification for the architectural choices of the proposed Autoencoder (AE) framework, addressing the design decisions regarding layer depth, activation functions, and computational complexity.
 
 ### Simulation Setup
 * **Terrestrial Channel:** Rayleigh fading channel.
@@ -16,35 +14,37 @@ To validate the satellite-specific optimization of the proposed Autoencoder (AE)
 <table align="center">
   <tr>
     <td align="center">
-      <img src="../figure/fig_r22_Comparison_channel_Rayleigh.png" width="100%">
+      <img src="../figure/optimal_AE_table_A.png" width="100%">
       <br>
-      <b>Figure 1. Rayleigh Results</b>
     </td>
     <td align="center">
-      <img src="../figure/fig_r22_Comparison_channel_SRfading.png" width="100%">
+      <img src="../figure/optimal_AE_table_B.png" width="100%">
       <br>
-      <b>Figure 2. Shadowed-Rician Results</b>
     </td>
   </tr>
 </table>
 
-### Performance Comparison Table
+# Architecture Optimization and Design Rationale of the Autoencoder
 
-| SNR (dB) | Method | SER (Rayleigh) | SER (SR) | Improvement (%) |
-| :---: | :--- | :---: | :---: | :---: |
-| | SIC | 0.498 | 0.557 | -11.668 |
-| 8 | JML | 0.317 | 0.362 | -14.424 |
-| | AE | 0.129 | 0.066 | 48.513 |
-| | SIC | 0.529 | 0.567 | -7.206 |
-| 14 | JML | 0.078 | 0.087 | -12.467 |
-| | AE | 0.042 | 0.013 | 68.723 |
-| | SIC | 0.556 | 0.587 | -5.560 |
-| 20 | JML | 0.008 | 0.008 | -2.104 |
-| | AE | 0.015 | 0.004 | 76.122 |
+This document provides a detailed justification for the architectural choices of the proposed Autoencoder (AE) framework, addressing the design decisions regarding layer depth, activation functions, and computational complexity.
 
-## Key Findings
-While conventional NOMA reception techniques (SIC, JML) are designed for Rayleigh environments and suffer performance degradation in satellite-specific channels, our proposed AE model demonstrates inherent adaptability to the Shadowed-Rician characteristics.
+### 1. Layer Depth Optimization (Ablation Study)
+We evaluated the Symbol Error Rate (SER) performance by varying the number of fully connected layers (from 1 to 4 layers) to find the optimal balance between performance and complexity.
 
-- **Conventional Methods (SIC/JML)**: Experience performance degradation (negative improvement) in the satellite-specific SR channel compared to the Rayleigh channel. This suggests that conventional methods are not optimized for the specific fading characteristics of satellite links.
+* **1-2 Layers:** Demonstrated reasonable performance but was insufficient for capturing complex satellite channel characteristics.
+* **3 Layers (Selected):** Yielded superior SER performance across the entire SNR spectrum (5 dB to 25 dB). This depth effectively minimizes interference in shadowed-Rician fading channels.
+* **4 Layers:** Did not provide meaningful gains and introduced unnecessary computational overhead.
+* **Conclusion:** A **3-layer structure (512 → 256 → 128)** was selected as the optimal architecture.
 
-- **Proposed AE Scheme:** Demonstrates significant performance gains in the SR channel, achieving an improvement of up to **76.1% at 20 dB SNR**. This confirms that the proposed AE is highly specialized and robust for satellite environments.
+### 2. Selection of Activation Function
+We compared **ReLU, Swish, and Sigmoid** functions to determine the most effective non-linear mapping for the satellite environment.
+
+* **ReLU (Selected):** Consistently outperformed others. It effectively mitigates the vanishing gradient problem during end-to-end training.
+* **Rationale:** ReLU enables the network to learn a distinct multidimensional constellation mapping that is highly resilient to severe superimposed interference.
+
+### 3. Summary of Design Decisions
+The proposed AE framework is the result of comprehensive optimization considering the unique characteristics of the satellite channel:
+
+
+---
+*For full simulation data (Tables B to F), please refer to the detailed logs in this repository or open an [issue](https://github.com/Yongjae-ICIS/SecureLEO/issues).*
