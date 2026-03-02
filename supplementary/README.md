@@ -14,10 +14,10 @@ Due to the page limitations of IEEE CL (5 pages), we provide additional experime
 
 | File | Reviewer Comment | Description |
 |------|-----------------|-------------|
-| [Channel_Specificity_Analysis.md](Channel_Specificity_Analysis.md) | R2.2 | A |
-| [Architecture_Optimization_Analysis.md](Architecture_Optimization_Analysis.md) | R2.3 | B |
-| [Power_Difference_Robustness_Analysis.md](Power_Difference_Robustness_Analysis.md) | R2.4 | C |
-| [an_satellite_analysis.md](an_satellite_analysis.md) | R3.5 | D |
+| [Channel_Specificity_Analysis.md](Channel_Specificity_Analysis.md) | R2.2 | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
+| [Architecture_Optimization_Analysis.md](Architecture_Optimization_Analysis.md) | R2.3 | Ablation studies on layer depth and activation functions to justify AE design. |
+| [Power_Difference_Robustness_Analysis.md](Power_Difference_Robustness_Analysis.md) | R2.4 | Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
+| [Geometric_Structure_and_Dimensional_Separation.md](Geometric_Structure_and_Dimensional_Separation.md) | R3.5 | Geometric interpretation of dimensional separation and constellation shaping for $n=4$. |
 
 ## Default System Configuration
 
@@ -25,16 +25,20 @@ Unless otherwise stated, experiments use the following default parameters:
 
 | Parameter | Symbol | Value | Description |
 |-----------|--------|-------|-------------|
-| Visible satellites | $N$ | $15$ | LEO satellites in GBS field of view |
-| Scheduled satellites | $K$ | $10$ | Satellites selected for transmission |
-| Data satellites | $K_d$ | $2$ | Satellites transmitting data |
-| AN satellites | $K_{\text{AN}}$ | $K - K_d = 8$ | Satellites transmitting artificial noise |
-| GBS antennas | $M_b$ | $2$ | Zero-forcing (ZF) receiver |
-| Eve antennas | $M_e$ | $2$ | MMSE receiver |
-| Shadowed-Rician $K$ | $K_{\text{SR}}$ | $3$ | Rician K-factor |
-| Shadowed-Rician $m$ | $m$ | $5$ | Nakagami-$m$ parameter |
-| Training samples | - | 40,000 | Number of training channel realizations |
-| MC samples | - | 100 | Monte Carlo samples for ergodic rate estimation |
+| GEO1 satellite modulation | $M1_$ | $8$ | GEO1 satellite modulation method |
+| GEO2 satellite modulation | $M2_$ | $4$ | GEO2 satellite modulation method |
+| GEO1 satellite dimensions | $n1_$ | $2$ | Number of dimensions GEO1 satellite|
+| GEO2 satellite dimensions | $n2_$ | $2$ | Number of dimensions GEO2 satellite|
+| Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
+| Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
+| Shadowed-Rician $\Omega$ | $m$ | $9.97 \tiems 10^-4$ | Average power |
+| Training samples | - | 500,000 | Number of training channel realizations |
+| Epochs | - | 25 | Number of training iterations |
+| Batch-size | - | 512 | Number of samples per gradient update |
+| Optimizer | - | 0.006 | Learning rate for Adam optimizer | 
+| Training SNR | - | 20 | SNR (dB) used during training |
+| Test samples | - | 1,000,000 | Total samples for validation | 
+
 
 ## Reproducibility
 
@@ -42,9 +46,6 @@ Unless otherwise stated, experiments use the following default parameters:
 All experiments can be reproduced using the source code in this repository. See the main [README.md](../README.md) for installation and usage instructions.
 
 ```bash
-# Example: Train with a specific system configuration
-python main.py train --num-samples 40000 --num-epochs 12 --num-data-sats 2
-
-# Example: Evaluate a trained model
-python main.py evaluate checkpoints/model.pt --num-trials 1000
+# Autoencoder-based NOMA freamwork
+python main.py --num-samples 500000 --num-epochs 25 --n-test 10000000
 ```

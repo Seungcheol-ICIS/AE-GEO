@@ -16,12 +16,12 @@ To validate the satellite-specific optimization of the proposed Autoencoder (AE)
 <table align="center">
   <tr>
     <td align="center">
-      <img src="../figure/fig_r22_Comparison_channel_Rayleigh.png" width="100%">
+      <img src="../figures/fig_r22_Comparison_channel_Rayleigh.png" width="100%">
       <br>
       <b>Figure 1. Rayleigh Results</b>
     </td>
     <td align="center">
-      <img src="../figure/fig_r22_Comparison_channel_SRfading.png" width="100%">
+      <img src="../figures/fig_r22_Comparison_channel_SRfading.png" width="100%">
       <br>
       <b>Figure 2. Shadowed-Rician Results</b>
     </td>
@@ -48,3 +48,5 @@ While conventional NOMA reception techniques (SIC, JML) are designed for Rayleig
 - **Conventional Methods (SIC/JML)**: Experience performance degradation (negative improvement) in the satellite-specific SR channel compared to the Rayleigh channel. This suggests that conventional methods are not optimized for the specific fading characteristics of satellite links.
 
 - **Proposed AE Scheme:** Demonstrates significant performance gains in the SR channel, achieving an improvement of up to **76.1% at 20 dB SNR**. This confirms that the proposed AE is highly specialized and robust for satellite environments.
+
+---

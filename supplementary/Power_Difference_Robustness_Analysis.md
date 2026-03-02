@@ -24,12 +24,12 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
 ### Performance Visualization (Varying SNR Gaps)
 
 <div align="center">
-  <img src="../figure/Power-Domain_SNR_0dB.png" width="32%">
-  <img src="../figure/Power-Domain_SNR_3dB.png" width="32%">
-  <img src="../figure/Power-Domain_SNR_6dB.png" width="32%">
+  <img src="../figures/fig_r23_Power-Domain_SNR_0dB.png" width="32%">
+  <img src="../figures/fig_r23_Power-Domain_SNR_3dB.png" width="32%">
+  <img src="../figures/fig_r23_Power-Domain_SNR_6dB.png" width="32%">
   <br>
-  <img src="../figure/Power-Domain_SNR_9dB.png" width="32%">
-  <img src="../figure/Power-Domain_SNR_12dB.png" width="32%">
+  <img src="../figures/fig_r23_Power-Domain_SNR_9dB.png" width="32%">
+  <img src="../figures/fig_r23_Power-Domain_SNR_12dB.png" width="32%">
   
   <p><b>SER performance under varying transmit power differences (0, 3, 6, 9, 12 dB).</b></p>
 </div>

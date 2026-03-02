@@ -28,7 +28,7 @@ AE-GEO is a practical and lightweight **autoencoder-based constellation redesign
 - **Rapid training convergence** with exceptional data efficiency
 - Advanced **multi-user(Satellite) interference (MUI)** suppression via geometric shaping
 - Edge AI Optimized Architecture for **Real-Time Satellite Communications**
-![System Model](figure/fig1_system_model.png)
+![System Model](figures/fig1_system_model.png)
 
 ## Project Structure
 
@@ -125,10 +125,21 @@ python main.py --config config.yaml
 | Activation (Hidden) | ReLU |
 | Activation (Output)	| Softmax |
 
+### System Parameters 
+| Parameter | Symbol | Value | Description |
+|-----------|--------|-------|-------------|
+| GEO1 satellite modulation | $M1_$ | $8$ | GEO1 satellite modulation method |
+| GEO2 satellite modulation | $M2_$ | $4$ | GEO2 satellite modulation method |
+| GEO1 satellite dimensions | $n1_$ | $2$ | Number of dimensions GEO1 satellite|
+| GEO2 satellite dimensions | $n2_$ | $2$ | Number of dimensions GEO2 satellite|
+| Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
+| Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
+| Shadowed-Rician $\Omega$ | $m$ | $9.97 \tiems 10^-4$ | Average power |
+
 ---
 
 ## Results
-![SER performance_comparison](figure/SER_performance_comparison.png)
+![SER performance_comparison](figures/SER_performance_comparison.png)
 
 | SNR | GEO1 SER (Sat-AE) | GEO1 SER (SIC) | GEO1 SER (JML) | GEO1 SER (MU-AE) |
 | :---: | :---: | :---: | :---: | :---: |
@@ -149,6 +160,10 @@ Due to the page limitations of IEEE Communications Letters additional experiment
 
 | Document | Description |
 | :---: | :---: |
+| [Channel_Specificity_Analysis.md](Channel_Specificity_Analysis.md) | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
+| [Architecture_Optimization_Analysis.md](Architecture_Optimization_Analysis.md) |  Ablation studies on layer depth and activation functions to justify AE design. |
+| [Power_Difference_Robustness_Analysis.md](Power_Difference_Robustness_Analysis.md) |  Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
+| [Geometric_Structure_and_Dimensional_Separation.md](Geometric_Structure_and_Dimensional_Separation.md) | Geometric interpretation of dimensional separation and constellation shaping for $n=4$. |
 
 
 
