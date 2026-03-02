@@ -35,7 +35,7 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
     <td></td> </tr>
 </table> -->
 
-<table align="center" width="100%">
+<!-- <table align="center" width="100%">
   <tr align="center">
     <td width="33%"><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
     <td width="33%"><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
@@ -45,7 +45,7 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
     <td colspan="1.5" width="50%"><img src="../figure/Power-Domain_SNR_9dB.png" width="66%"><br>9 dB</td>
     <td colspan="1.5" width="50%"><img src="../figure/Power-Domain_SNR_12dB.png" width="66%"><br>12 dB</td>
   </tr>
-</table>
+</table> -->
 
 <div align="center">
   <img src="../figure/Power-Domain_SNR_0dB.png" width="32%">
