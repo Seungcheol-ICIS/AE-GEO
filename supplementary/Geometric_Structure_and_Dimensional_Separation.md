@@ -25,7 +25,7 @@ To demonstrate the effectiveness of this strategy beyond the n=2 case shown in t
 The following figure illustrates how the AE utilizes four-dimensional space to achieve superior signal separation compared to conventional 2D modulations.
 
 <div align="center">
-  <img src="../figure/fig_r35_constellation_n4.png" width="70%">
+  <img src="../figures/fig_r35_constellation_n4.png" width="70%">
   <br>
   <b>Dimensional separation and symbol arrangement for n=4 codeword length.</b>
 </div>

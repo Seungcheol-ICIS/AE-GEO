@@ -25,13 +25,13 @@ Unless otherwise stated, experiments use the following default parameters:
 
 | Parameter | Symbol | Value | Description |
 |-----------|--------|-------|-------------|
-| GEO1 satellite modulation | $M1_$ | $8$ | GEO1 satellite modulation method |
-| GEO2 satellite modulation | $M2_$ | $4$ | GEO2 satellite modulation method |
-| GEO1 satellite dimensions | $n1_$ | $2$ | Number of dimensions GEO1 satellite|
-| GEO2 satellite dimensions | $n2_$ | $2$ | Number of dimensions GEO2 satellite|
+| GEO1 satellite modulation | $M_1$ | $8$ | GEO1 satellite modulation method |
+| GEO2 satellite modulation | $M_2$ | $4$ | GEO2 satellite modulation method |
+| GEO1 satellite dimensions | $n_1$ | $2$ | Number of dimensions GEO1 satellite|
+| GEO2 satellite dimensions | $n_2$ | $2$ | Number of dimensions GEO2 satellite|
 | Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
 | Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
-| Shadowed-Rician $\Omega$ | $m$ | $9.97 \tiems 10^-4$ | Average power |
+| Shadowed-Rician $\Omega$ | $\Omega$ | $8.97 \times 10^P{-4}$ | Average power |
 | Training samples | - | 500,000 | Number of training channel realizations |
 | Epochs | - | 25 | Number of training iterations |
 | Batch-size | - | 512 | Number of samples per gradient update |
@@ -47,5 +47,5 @@ All experiments can be reproduced using the source code in this repository. See 
 
 ```bash
 # Autoencoder-based NOMA freamwork
-python main.py --num-samples 500000 --num-epochs 25 --n-test 10000000
+python main.py --num-samples 500000 --num-epochs 25 --num-batch_size 512 --n-test 10000000
 ```
