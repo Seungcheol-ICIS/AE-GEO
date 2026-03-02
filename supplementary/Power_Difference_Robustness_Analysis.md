@@ -6,7 +6,7 @@
 
 This document explores the impact of varying transmit power differences (SNR differences) between two GEO satellites to evaluate the general robustness of the proposed Autoencoder (AE) framework.
 
-### 1. Simulation Setup
+### Simulation Setup
 We evaluated the Symbol Error Rate (SER) performance across a wide range of power differences to simulate diverse operational scenarios:
 * **Power Differences:** 0 dB, 3 dB, 6 dB, 9 dB, and 12 dB.
 * **Baseline Methods:** Conventional Successive Interference Cancellation (SIC) and Joint Maximum Likelihood (JML) receivers.
@@ -21,31 +21,7 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
 * **Observation:** As the power gap increases, the stronger signal (GEO 1) dominates the signal space, making it easier for all receivers to distinguish the signals.
 * **Result:** While the JML receiver's performance improves and approaches the AE scheme, the **proposed AE still maintains superior SER performance**, demonstrating consistent robustness regardless of the power ratio.
 
-### 3. Performance Visualization (Varying SNR Gaps)
-
-<!-- <table align="center">
-  <tr align="center">
-    <td><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
-    <td><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
-    <td><img src="../figure/Power-Domain_SNR_6dB.png" width="100%"><br>6 dB</td>
-  </tr>
-  <tr align="center">
-    <td><img src="../figure/Power-Domain_SNR_9dB.png" width="100%"><br>9 dB</td>
-    <td><img src="../figure/Power-Domain_SNR_12dB.png" width="100%"><br>12 dB</td>
-    <td></td> </tr>
-</table> -->
-
-<!-- <table align="center" width="100%">
-  <tr align="center">
-    <td width="33%"><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
-    <td width="33%"><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
-    <td width="33%"><img src="../figure/Power-Domain_SNR_6dB.png" width="100%"><br>6 dB</td>
-  </tr>
-  <tr align="center">
-    <td colspan="1.5" width="50%"><img src="../figure/Power-Domain_SNR_9dB.png" width="66%"><br>9 dB</td>
-    <td colspan="1.5" width="50%"><img src="../figure/Power-Domain_SNR_12dB.png" width="66%"><br>12 dB</td>
-  </tr>
-</table> -->
+### Performance Visualization (Varying SNR Gaps)
 
 <div align="center">
   <img src="../figure/Power-Domain_SNR_0dB.png" width="32%">
@@ -55,12 +31,10 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
   <img src="../figure/Power-Domain_SNR_9dB.png" width="32%">
   <img src="../figure/Power-Domain_SNR_12dB.png" width="32%">
   
-  <p><b>Figure C. SER performance under varying transmit power differences (0, 3, 6, 9, 12 dB).</b></p>
+  <p><b>SER performance under varying transmit power differences (0, 3, 6, 9, 12 dB).</b></p>
 </div>
-
-<p align="center"><b>SER performance comparison under varying transmit power differences (0dB to 12dB).</b></p>
 
 ### 4. Conclusion
 The proposed AE-based framework is not only optimized for a specific setup but is highly adaptive to various power imbalance scenarios, proving its practicality in real-world satellite communication environments.
 
----
+--- 
