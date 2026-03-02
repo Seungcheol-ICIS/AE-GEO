@@ -134,7 +134,7 @@ python main.py --config config.yaml
 | GEO2 satellite dimensions | $n_2$ | $2$ | Number of dimensions GEO2 satellite|
 | Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
 | Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
-| Shadowed-Rician $\Omega$ | $m$ | $9.97 \tiems 10^-4$ | Average power |
+| Shadowed-Rician $\Omega$ | $\Omega$ | $8.97 \times 10^-4$ | Average power |
 
 ---
 
