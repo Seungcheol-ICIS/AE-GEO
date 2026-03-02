@@ -23,7 +23,7 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
 
 ### 3. Performance Visualization (Varying SNR Gaps)
 
-<table align="center">
+<!-- <table align="center">
   <tr align="center">
     <td><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
     <td><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
@@ -33,9 +33,32 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
     <td><img src="../figure/Power-Domain_SNR_9dB.png" width="100%"><br>9 dB</td>
     <td><img src="../figure/Power-Domain_SNR_12dB.png" width="100%"><br>12 dB</td>
     <td></td> </tr>
+</table> -->
+
+<table align="center" width="100%">
+  <tr align="center">
+    <td width="33%"><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
+    <td width="33%"><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
+    <td width="33%"><img src="../figure/Power-Domain_SNR_6dB.png" width="100%"><br>6 dB</td>
+  </tr>
+  <tr align="center">
+    <td colspan="1.5" width="50%"><img src="../figure/Power-Domain_SNR_9dB.png" width="66%"><br>9 dB</td>
+    <td colspan="1.5" width="50%"><img src="../figure/Power-Domain_SNR_12dB.png" width="66%"><br>12 dB</td>
+  </tr>
 </table>
 
-<p align="center"><b>Figure C. SER performance comparison under varying transmit power differences (0dB to 12dB).</b></p>
+<div align="center">
+  <img src="../figure/Power-Domain_SNR_0dB.png" width="32%">
+  <img src="../figure/Power-Domain_SNR_3dB.png" width="32%">
+  <img src="../figure/Power-Domain_SNR_6dB.png" width="32%">
+  <br>
+  <img src="../figure/Power-Domain_SNR_9dB.png" width="32%">
+  <img src="../figure/Power-Domain_SNR_12dB.png" width="32%">
+  
+  <p><b>Figure C. SER performance under varying transmit power differences (0, 3, 6, 9, 12 dB).</b></p>
+</div>
+
+<p align="center"><b>SER performance comparison under varying transmit power differences (0dB to 12dB).</b></p>
 
 ### 4. Conclusion
 The proposed AE-based framework is not only optimized for a specific setup but is highly adaptive to various power imbalance scenarios, proving its practicality in real-world satellite communication environments.
