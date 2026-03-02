@@ -26,19 +26,17 @@ To validate the satellite-specific optimization of the proposed Autoencoder (AE)
 | 20 | JML | 0.008 | 0.008 | -2.104 |
 | | AE (Ours) | 0.015 | 0.004 | 76.122 |
 
-![System Model](../figure/fig1_system_model.png)
-
 
 ### Result
 <table align="center">
   <tr>
     <td align="center">
-      <img src="figure/fig_r22_Comparison_channel_Rayleigh.png" width="100%">
+      <img src="../figure/fig_r22_Comparison_channel_Rayleigh.png" width="100%">
       <br>
       <b>Figure 1. Rayleigh Results</b>
     </td>
     <td align="center">
-      <img src="figure/fig_r22_Comparison_channel_SRfading.png" width="100%">
+      <img src="../figure/fig_r22_Comparison_channel_SRfading.png" width="100%">
       <br>
       <b>Figure 2. Shadowed-Rician Results</b>
     </td>
