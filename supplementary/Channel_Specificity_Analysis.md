@@ -27,9 +27,18 @@ To validate the satellite-specific optimization of the proposed Autoencoder (AE)
 | | AE (Ours) | 0.015 | 0.004 | 76.122 |
 
 ### Result
-![Figure 1. Rayleigh fading results](figure/Comparison_channel_Rayleigh.png)
-![Figure 2. Shadowed-rician fading results](figure/Comparison_channel_SRfading.png)
+![Figure 2. Shadowed-rician fading results](figure/fig1_system_model.png)
 
+
+<p align="center">
+  <img src="figures/fig_r22_Comparison_channel_Rayleigh.png" alt="Secrecy Rate varying N" width="800">
+  <br><em>Secrecy sum-rate comparison across N = {12, 15, 18}</em>
+</p>
+
+<p align="center">
+  <img src="figures/fig_r13_outage_varying_N.png" alt="Outage varying N" width="800">
+  <br><em>Secrecy outage probability across N = {12, 15, 18}</em>
+</p>
 
 ## Key Findings
 While conventional NOMA reception techniques (SIC, JML) are designed for Rayleigh environments and suffer performance degradation in satellite-specific channels, our proposed AE model demonstrates inherent adaptability to the Shadowed-Rician characteristics.
