@@ -14,8 +14,8 @@ Due to the page limitations of IEEE CL (5 pages), we provide additional experime
 
 | File | Reviewer Comment | Description |
 |------|-----------------|-------------|
-| [parameter_sensitivity.md](parameter_sensitivity.md) | R2.2 | A |
-| [performance_gap_analysis.md](performance_gap_analysis.md) | R2.3 | B |
+| [Channel_Specificity_Analysis.md](Channel_Specificity_Analysis.md) | R2.2 | A |
+| [performance_gap_analysis.md](Channel_Specificity_Analysis.md) | R2.3 | B |
 | [ablation_study.md](ablation_study.md) | R2.4 | C |
 | [an_satellite_analysis.md](an_satellite_analysis.md) | R3.5 | D |
 
@@ -37,6 +37,7 @@ Unless otherwise stated, experiments use the following default parameters:
 | MC samples | - | 100 | Monte Carlo samples for ergodic rate estimation |
 
 ## Reproducibility
+
 
 All experiments can be reproduced using the source code in this repository. See the main [README.md](../README.md) for installation and usage instructions.
 
