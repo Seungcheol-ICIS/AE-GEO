@@ -28,14 +28,12 @@ The proposed AE framework is the result of comprehensive optimization considerin
     <td align="center">
       <img src="../figure/optimal_AE_table_A.png" width="80%">
       <br>
-      <b>Table A. Performance Comparison (A)</b>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img src="../figure/optimal_AE_table_B.png" width="80%">
       <br>
-      <b>Table B. Performance Comparison (B)</b>
     </td>
   </tr>
 </table>
