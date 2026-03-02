@@ -165,7 +165,7 @@ python main.py --config config.yaml
 Due to the page limitations of IEEE Communications Letters additional experimental results and technical details are provided in the [`supplementary/`](supplementary/) directory:
 
 | Document | Description |
-| :---: | :---: |
+|----------|-------------|
 | [Channel Specificity Analysis](supplementary/Channel_Specificity_Analysis.md) | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
 | [Architecture Optimization Analysis](supplementary/Architecture_Optimization_Analysis.md) |  Ablation studies on layer depth and activation functions to justify AE design. |
 | [Power Difference Robustness Analysis](supplementary/Power_Difference_Robustness_Analysis.md) |  Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
