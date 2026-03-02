@@ -29,8 +29,8 @@ To validate the satellite-specific optimization of the proposed Autoencoder (AE)
 ### Result
 <table align="center">
   <tr>
-    <td><img src="figure/Comparison channel SRfading.png" width="100%"></td>
-    <td><img src="figure/Comparison channel Rayleigh.png" width="100%"></td>
+    <td><img src="figure/Comparison_channel_SRfading.png" width="100%"></td>
+    <td><img src="figure/Comparison_channel_Rayleigh.png" width="100%"></td>
   </tr>
   <tr align="center">
     <td><b>Figure 1.</b> Rayleigh Channel Results</td>
