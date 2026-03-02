@@ -26,7 +26,7 @@ To validate the satellite-specific optimization of the proposed Autoencoder (AE)
 | 20 | JML | 0.008 | 0.008 | -2.104 |
 | | AE (Ours) | 0.015 | 0.004 | 76.122 |
 
-![System Model](figure/fig1_system_model.png)
+![System Model](../figure/fig1_system_model.png)
 
 
 ### Result
