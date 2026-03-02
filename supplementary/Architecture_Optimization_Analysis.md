@@ -2,28 +2,6 @@
 
 **Reviewer Comment (R2.3):** "The description of the autoencoder architecture is too brief, lacking justification for the choice of network layers or computational complexity, which could hinder practical implementation; the authors should elaborate on design decisions, such as the rationale behind activation functions."
 
-## Overview
-This document provides a detailed justification for the architectural choices of the proposed Autoencoder (AE) framework, addressing the design decisions regarding layer depth, activation functions, and computational complexity.
-
-### Simulation Setup
-* **Terrestrial Channel:** Rayleigh fading channel.
-* **Satellite Channel:** Shadowed-Rician (SR) fading channel.
-* **Metric:** Symbol Error Rate (SER) and relative improvement rate.
-
-### Simulation Result
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="../figure/optimal_AE_table_A.png" width="100%">
-      <br>
-    </td>
-    <td align="center">
-      <img src="../figure/optimal_AE_table_B.png" width="100%">
-      <br>
-    </td>
-  </tr>
-</table>
-
 # Architecture Optimization and Design Rationale of the Autoencoder
 
 This document provides a detailed justification for the architectural choices of the proposed Autoencoder (AE) framework, addressing the design decisions regarding layer depth, activation functions, and computational complexity.
@@ -45,6 +23,21 @@ We compared **ReLU, Swish, and Sigmoid** functions to determine the most effecti
 ### 3. Summary of Design Decisions
 The proposed AE framework is the result of comprehensive optimization considering the unique characteristics of the satellite channel:
 
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="../figure/optimal_AE_table_A.png" width="80%">
+      <br>
+      <b>Table A. Performance Comparison (A)</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="../figure/optimal_AE_table_B.png" width="80%">
+      <br>
+      <b>Table B. Performance Comparison (B)</b>
+    </td>
+  </tr>
+</table>
 
 ---
-*For full simulation data (Tables B to F), please refer to the detailed logs in this repository or open an [issue](https://github.com/Yongjae-ICIS/SecureLEO/issues).*
