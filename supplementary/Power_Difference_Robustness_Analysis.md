@@ -24,52 +24,18 @@ We evaluated the Symbol Error Rate (SER) performance across a wide range of powe
 ### 3. Performance Visualization (Varying SNR Gaps)
 
 <table align="center">
-  <tr>
-    <td align="center"><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
-    <figcaption><b>Figure 1.</b> Performance at 0 dB Power Difference</figcaption>
-    <td align="center"><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
-    <figcaption><b>Figure 2.</b> Performance at 3 dB Power Difference</figcaption>
+  <tr align="center">
+    <td><img src="../figure/Power-Domain_SNR_0dB.png" width="100%"><br>0 dB</td>
+    <td><img src="../figure/Power-Domain_SNR_3dB.png" width="100%"><br>3 dB</td>
+    <td><img src="../figure/Power-Domain_SNR_6dB.png" width="100%"><br>6 dB</td>
   </tr>
-  <tr>
-    <td align="center"><img src="../figure/Power-Domain_SNR_6dB.png" width="100%"><br>6 dB</td>
-    <figcaption><b>Figure 3.</b> Performance at 6 dB Power Difference</figcaption>
-    <td align="center"><img src="../figure/Power-Domain_SNR_9dB.png" width="100%"><br>9 dB</td>
-    <figcaption><b>Figure 4.</b> Performance at 9 dB Power Difference</figcaption>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <img src="../figure/Power-Domain_SNR_12dB.png" width="50%">
-      <figcaption><b>Figure 5.</b> Performance at 12 dB Power Difference</figcaption>
-    </td>
-  </tr>
+  <tr align="center">
+    <td><img src="../figure/Power-Domain_SNR_9dB.png" width="100%"><br>9 dB</td>
+    <td><img src="../figure/Power-Domain_SNR_12dB.png" width="100%"><br>12 dB</td>
+    <td></td> </tr>
 </table>
 
-<div align="center">
-  <figure>
-    <img src="../figure/Power-Domain_SNR_0dB.png" width="85%">
-    <figcaption><b>Figure C-1.</b> Performance at 0 dB Power Difference</figcaption>
-  </figure>
-  <br>
-  <figure>
-    <img src="../figure/Power-Domain_SNR_3dB.png" width="85%">
-    <figcaption><b>Figure C-2.</b> Performance at 3 dB Power Difference</figcaption>
-  </figure>
-  <br>
-  <figure>
-    <img src="../figure/Power-Domain_SNR_6dB.png" width="85%">
-    <figcaption><b>Figure C-3.</b> Performance at 6 dB Power Difference</figcaption>
-  </figure>
-  <br>
-  <figure>
-    <img src="../figure/Power-Domain_SNR_9dB.png" width="85%">
-    <figcaption><b>Figure C-4.</b> Performance at 9 dB Power Difference</figcaption>
-  </figure>
-  <br>
-  <figure>
-    <img src="../figure/Power-Domain_SNR_12dB.png" width="85%">
-    <figcaption><b>Figure C-5.</b> Performance at 12 dB Power Difference</figcaption>
-  </figure>
-</div>
+<p align="center"><b>Figure C. SER performance comparison under varying transmit power differences (0dB to 12dB).</b></p>
 
 ### 4. Conclusion
 The proposed AE-based framework is not only optimized for a specific setup but is highly adaptive to various power imbalance scenarios, proving its practicality in real-world satellite communication environments.
