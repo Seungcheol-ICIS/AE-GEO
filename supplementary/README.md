@@ -31,7 +31,7 @@ Unless otherwise stated, experiments use the following default parameters:
 | GEO2 satellite dimensions | $n_2$ | $2$ | Number of dimensions GEO2 satellite|
 | Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
 | Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
-| Shadowed-Rician $\Omega$ | $\Omega$ | $8.97 \times 10^P{-4}$ | Average power |
+| Shadowed-Rician $\Omega$ | $\Omega$ | $8.97 \times 10^{-4}$ | Average power |
 | Training samples | - | 500,000 | Number of training channel realizations |
 | Epochs | - | 25 | Number of training iterations |
 | Batch-size | - | 512 | Number of samples per gradient update |
