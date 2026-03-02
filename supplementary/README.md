@@ -15,8 +15,8 @@ Due to the page limitations of IEEE CL (5 pages), we provide additional experime
 | File | Reviewer Comment | Description |
 |------|-----------------|-------------|
 | [Channel_Specificity_Analysis.md](Channel_Specificity_Analysis.md) | R2.2 | A |
-| [performance_gap_analysis.md](Channel_Specificity_Analysis.md) | R2.3 | B |
-| [ablation_study.md](ablation_study.md) | R2.4 | C |
+| [Architecture_Optimization_Analysis.md](Architecture_Optimization_Analysis.md) | R2.3 | B |
+| [Power_Difference_Robustness_Analysis.md](Power_Difference_Robustness_Analysis.md) | R2.4 | C |
 | [an_satellite_analysis.md](an_satellite_analysis.md) | R3.5 | D |
 
 ## Default System Configuration

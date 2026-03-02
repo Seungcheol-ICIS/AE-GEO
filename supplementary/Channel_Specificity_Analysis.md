@@ -1,6 +1,6 @@
 # Comparative Analysis of Channel Specificity and Model Robustness (R2.2)
 
-**Reviewer Comment (R2.2):** "The innovation claim of using autoencoders for constellation redesign is not sufficiently novel, as similar approaches exist in NOMA contexts; the article does not clearly articulate how the satellite-specific adaptations."
+**Reviewer Comment (R2.2):** "The simulation experiments are limited to fixed power di↵erences and specific modulation orders"
 
 ## Overview
 

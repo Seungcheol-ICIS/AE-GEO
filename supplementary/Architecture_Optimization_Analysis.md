@@ -2,11 +2,11 @@
 
 **Reviewer Comment (R2.3):** "The description of the autoencoder architecture is too brief, lacking justification for the choice of network layers or computational complexity, which could hinder practical implementation; the authors should elaborate on design decisions, such as the rationale behind activation functions."
 
-# Architecture Optimization and Design Rationale of the Autoencoder
+## Overview
 
 This document provides a detailed justification for the architectural choices of the proposed Autoencoder (AE) framework, addressing the design decisions regarding layer depth, activation functions, and computational complexity.
 
-### 1. Layer Depth Optimization (Ablation Study)
+### Layer Depth Optimization (Ablation Study)
 We evaluated the Symbol Error Rate (SER) performance by varying the number of fully connected layers (from 1 to 4 layers) to find the optimal balance between performance and complexity.
 
 * **1-2 Layers:** Demonstrated reasonable performance but was insufficient for capturing complex satellite channel characteristics.
@@ -20,7 +20,7 @@ We compared **ReLU, Swish, and Sigmoid** functions to determine the most effecti
 * **ReLU (Selected):** Consistently outperformed others. It effectively mitigates the vanishing gradient problem during end-to-end training.
 * **Rationale:** ReLU enables the network to learn a distinct multidimensional constellation mapping that is highly resilient to severe superimposed interference.
 
-### 3. Summary of Design Decisions
+### Summary of Design Decisions
 The proposed AE framework is the result of comprehensive optimization considering the unique characteristics of the satellite channel:
 
 <table align="center">
