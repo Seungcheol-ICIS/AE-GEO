@@ -1,4 +1,4 @@
-# HComparative Analysis of Channel Specificity and Model Robustness (R2.2)
+# Comparative Analysis of Channel Specificity and Model Robustness (R2.2)
 
 **Reviewer Comment (R2.2):** "The innovation claim of using autoencoders for constellation redesign is not sufficiently novel, as similar approaches exist in NOMA contexts; the article does not clearly articulate how the satellite-specific adaptations."
 
@@ -7,24 +7,37 @@
 To validate the satellite-specific optimization of the proposed Autoencoder (AE) framework, we conduct a comparative analysis between a generic Rayleigh fading channel (typical for terrestrial NOMA) and the Shadowed-Rician (SR) fading channel (specific to satellite-to-ground links).
 
 
-### 1. Simulation Setup
+### Simulation Setup
 * **Terrestrial Channel:** Rayleigh fading channel.
 * **Satellite Channel:** Shadowed-Rician (SR) fading channel.
 * **Metric:** Symbol Error Rate (SER) and relative improvement rate.
 
-## Performance Comparison Table
+### Performance Comparison Table
 
 | SNR (dB) | Method | SER (Rayleigh) | SER (SR) | Improvement (%) |
 | :---: | :--- | :---: | :---: | :---: |
-| 8 | SIC | 0.498 | 0.557 | -11.668 |
-| | JML | 0.317 | 0.362 | -14.424 |
+| | SIC | 0.498 | 0.557 | -11.668 |
+| 8 | JML | 0.317 | 0.362 | -14.424 |
 | | AE (Ours) | 0.129 | 0.066 | 48.513 |
-| 14 | SIC | 0.529 | 0.567 | -7.206 |
-| | JML | 0.078 | 0.087 | -12.467 |
+| | SIC | 0.529 | 0.567 | -7.206 |
+| 14 | JML | 0.078 | 0.087 | -12.467 |
 | | AE (Ours) | 0.042 | 0.013 | 68.723 |
-| 20 | SIC | 0.556 | 0.587 | -5.560 |
-| | JML | 0.008 | 0.008 | -2.104 |
+| | SIC | 0.556 | 0.587 | -5.560 |
+| 20 | JML | 0.008 | 0.008 | -2.104 |
 | | AE (Ours) | 0.015 | 0.004 | 76.122 |
+
+### Result
+<table align="center">
+  <tr>
+    <td><img src="figure/Comparison channel SRfading.png" width="100%"></td>
+    <td><img src="figure/Comparison channel Rayleigh.png" width="100%"></td>
+  </tr>
+  <tr align="center">
+    <td><b>Figure 1.</b> Rayleigh Channel Results</td>
+    <td><b>Figure 2.</b> Shadowed-Rician Results</td>
+  </tr>
+</table>
+
 
 ## Key Findings
 While conventional NOMA reception techniques (SIC, JML) are designed for Rayleigh environments and suffer performance degradation in satellite-specific channels, our proposed AE model demonstrates inherent adaptability to the Shadowed-Rician characteristics.
