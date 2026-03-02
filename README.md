@@ -146,6 +146,14 @@ python main.py --config config.yaml
 | 18 | 0.005 | 0.067 | 0.067 | 0.008 |
 | 20 | 0.003 | 0.056 | 0.056 | 0.006 |
 
+## Supplementary Materials
+Due to the page limitations of IEEE Communications Letters additional experimental results and technical details are provided in the [`supplementary/`](supplementary/) directory:
+
+| Document | Description |
+| :---: | :---: |
+
+
+
 ## Citation
 
 *Citation information will be added upon publication.*
@@ -160,15 +168,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-- **EDSR**: [EDSR-PyTorch](https://github.com/sanghyun-son/EDSR-PyTorch) - Super-resolution model architecture
-- **ResNet**: [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) - Classification backbone
-- **Iridium Dataset**: [PAST-AI](https://github.com/spritz-group/PAST-AI) - Public satellite IQ sample dataset
-- **AMC Framework**: T. K. Oikonomou et al., "CNN-Based Automatic Modulation Classification Under Phase Imperfections," IEEE WCL, 2024 - Polar coordinate transformation baseline
+- **Channel model**: M. R. Bhatnagar and A. M.K., "On the Closed-Form Performance Analysis of Maximal Ratio Combining in Shadowed-Rician Fading LMS Channels," in IEEE Communications Letters - Shadowed Rician fading channel modeling
+- **m-user Autoencoder Framework**: D. Wu, M. Nekovee and Y. Wang, "Deep Learning-Based Autoencoder for m-User Wireless Interference Channel Physical Layer Design," in IEEE Access - Autoencoder comparison techniques
 
 ---
 
 ## Contact
 
-For questions or issues, please open an issue or contact:
+For questions or collaboration inquiries, please open an [issue](https://github.com/Seungcheol-ICIS/AE-GEO/issues) or contact the corresponding author listed in the paper.
 - Seungcheol Ha: scha@edu.hanbat.ac.kr
 - Inkyu Bang: ikbang@hanbat.ac.kr
