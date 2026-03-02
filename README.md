@@ -128,10 +128,10 @@ python main.py --config config.yaml
 ### System Parameters 
 | Parameter | Symbol | Value | Description |
 |-----------|--------|-------|-------------|
-| GEO1 satellite modulation | $M1_$ | $8$ | GEO1 satellite modulation method |
-| GEO2 satellite modulation | $M2_$ | $4$ | GEO2 satellite modulation method |
-| GEO1 satellite dimensions | $n1_$ | $2$ | Number of dimensions GEO1 satellite|
-| GEO2 satellite dimensions | $n2_$ | $2$ | Number of dimensions GEO2 satellite|
+| GEO1 satellite modulation | $M_1$ | $8$ | GEO1 satellite modulation method |
+| GEO2 satellite modulation | $M_2$ | $4$ | GEO2 satellite modulation method |
+| GEO1 satellite dimensions | $n_1$ | $2$ | Number of dimensions GEO1 satellite|
+| GEO2 satellite dimensions | $n_2$ | $2$ | Number of dimensions GEO2 satellite|
 | Shadowed-Rician $b$ | $b$ | $0.126$ | Scattering parameter |
 | Shadowed-Rician $m$ | $m$ | $10.1$ | Shape parameter |
 | Shadowed-Rician $\Omega$ | $m$ | $9.97 \tiems 10^-4$ | Average power |
@@ -160,10 +160,10 @@ Due to the page limitations of IEEE Communications Letters additional experiment
 
 | Document | Description |
 | :---: | :---: |
-| [Channel_Specificity_Analysis.md](Channel_Specificity_Analysis.md) | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
-| [Architecture_Optimization_Analysis.md](Architecture_Optimization_Analysis.md) |  Ablation studies on layer depth and activation functions to justify AE design. |
-| [Power_Difference_Robustness_Analysis.md](Power_Difference_Robustness_Analysis.md) |  Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
-| [Geometric_Structure_and_Dimensional_Separation.md](Geometric_Structure_and_Dimensional_Separation.md) | Geometric interpretation of dimensional separation and constellation shaping for $n=4$. |
+| [Channel Specificity Analysis](Channel_Specificity_Analysis.md) | Comparative analysis of performance in Shadowed-Rician vs. Rayleigh channels. |
+| [Architecture Optimization Analysis](Architecture_Optimization_Analysis.md) |  Ablation studies on layer depth and activation functions to justify AE design. |
+| [Power_Difference Robustness Analysis](Power_Difference_Robustness_Analysis.md) |  Robustness evaluation across various transmit power gaps (0 dB to 12 dB). |
+| [Geometric Structure and Dimensional Separation](Geometric_Structure_and_Dimensional_Separation.md) | Geometric interpretation of dimensional separation and constellation shaping for $n=4$. |
 
 
 
