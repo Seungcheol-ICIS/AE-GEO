@@ -2,7 +2,7 @@
 
 **Paper:** Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites
 
-**Manuscript ID:** WCL2025-2914
+**Manuscript ID:** CL2025-2743
 
 **Journal:** IEEE Communications Letters
 
