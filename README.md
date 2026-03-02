@@ -6,7 +6,7 @@
 
 Implementation code for **"Autoencoder-Based Constellation Redesign for Joint Operation of Dual Geostationary Earth Orbit Satellites"**
 
-> **Authors:** Seungcheol Ha†, Seongmin Pyo, Dong-Hyo Lee, Taehoon Kim, and Inkyu Bang
+> **Authors:** Seungcheol Ha, Seongmin Pyo, Dong-Hyo Lee, Taehoon Kim, and Inkyu Bang
 >
 > **Submitted in:** IEEE Communications Letters
 
@@ -195,5 +195,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For questions or collaboration inquiries, please open an [issue](https://github.com/Seungcheol-ICIS/AE-GEO/issues) or contact the corresponding author listed in the paper.
-- Seungcheol Ha: scha@edu.hanbat.ac.kr
-- Inkyu Bang: ikbang@hanbat.ac.kr
